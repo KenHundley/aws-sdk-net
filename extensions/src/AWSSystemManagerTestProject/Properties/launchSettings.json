@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "AWSSystemManagerTestProject": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SSM:Path": "/myapp/dev/",
+        "AWS:Region": "us-east-1",
+        "ApplicationSettings:SettingsEnv": "FromEnvVars"
+      },
+      "applicationUrl": "http://localhost:51160/"
+    }
+  }
+}
