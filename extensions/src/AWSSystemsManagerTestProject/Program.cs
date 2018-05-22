@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace AWSSystemManagerTestProject
+namespace AWSSystemsManagerTestProject
 {
     public class Program
     {
@@ -22,17 +22,7 @@ namespace AWSSystemManagerTestProject
             var host = WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration(builder =>
                 {
-                    var config = builder.Build();
-                    builder.AddAWSSystemManager(source =>
-                    {
-                        source.Path = config["SSM:Path"];
-                        source.ReloadAfter = TimeSpan.FromSeconds(60);
-                        source.OnLoadException = context =>
-                        {
-                            logger.LogCritical(context.Exception, "Failed to load configuration from SSM Parameter Store");
-                            context.Ignore = false;
-                        };
-                    });
+                    builder.AddAWSSystemsManager("/myapp/dev/");
                 })
                 .UseStartup<Startup>()
                 .Build();

@@ -19,13 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.NETCore.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.CoreCLR", "..\sdk\src\Services\S3\AWSSDK.S3.CoreCLR.csproj", "{8433CB66-751C-4A91-BC10-0B13DB902C04}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.Configuration.AWSSystemManager", "src\AWSSDK.Extensions.Configuration.AWSSystemManager\AWSSDK.Extensions.Configuration.AWSSystemManager.csproj", "{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.Configuration.AWSSystemsManager", "src\AWSSDK.Extensions.Configuration.AWSSystemsManager\AWSSDK.Extensions.Configuration.AWSSystemsManager.csproj", "{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSystemManagerTestProject", "src\AWSSystemManagerTestProject\AWSSystemManagerTestProject.csproj", "{5162B7AD-7870-4765-AF38-F91AED260054}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSystemsManagerTestProject", "src\AWSSystemsManagerTestProject\AWSSystemsManagerTestProject.csproj", "{5162B7AD-7870-4765-AF38-F91AED260054}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{28DDAF82-B802-4CC2-AB5D-79559590EAEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSystemManagerTests", "test\Configuration\AWSSystemManagerTests\AWSSystemManagerTests.csproj", "{E6F5CAB8-8068-496F-A289-5D98D1095370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSystemsManagerTests", "test\Configuration\AWSSystemsManagerTests\AWSSystemsManagerTests.csproj", "{E6F5CAB8-8068-496F-A289-5D98D1095370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

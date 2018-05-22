@@ -27,18 +27,18 @@ namespace Microsoft.Extensions.Configuration
 {
     /// <inheritdoc />
     /// <summary>
-    /// An AWS System Manager Parameter Store based <see cref="IConfigurationProvider" />.
+    /// An AWS Systems Manager Parameter Store based <see cref="IConfigurationProvider" />.
     /// </summary>
-    public class AWSSystemManagerConfigurationProvider : ConfigurationProvider
+    public class AWSSystemsManagerConfigurationProvider : ConfigurationProvider
     {
-        private readonly AWSSystemManagerConfigurationSource _configurationSource;
+        private readonly AWSSystemsManagerConfigurationSource _configurationSource;
 
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance with the specified source.
         /// </summary>
-        /// <param name="configurationSource">The <see cref="IConfigurationSource"/> used to retrieve values from AWS System Manager Parameter Store</param>
-        public AWSSystemManagerConfigurationProvider(AWSSystemManagerConfigurationSource configurationSource)
+        /// <param name="configurationSource">The <see cref="IConfigurationSource"/> used to retrieve values from AWS Systems Manager Parameter Store</param>
+        public AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource)
         {
             _configurationSource = configurationSource ?? throw new ArgumentNullException(nameof(configurationSource));
             if (configurationSource.AwsOptions == null) throw new ArgumentNullException(nameof(configurationSource.AwsOptions));
@@ -57,7 +57,7 @@ namespace Microsoft.Extensions.Configuration
 
         /// <inheritdoc />
         /// <summary>
-        /// Loads the AWS System Manager Parameters.
+        /// Loads the AWS Systems Manager Parameters.
         /// </summary>
         public override void Load() => LoadAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
@@ -91,7 +91,7 @@ namespace Microsoft.Extensions.Configuration
                 var ignoreException = false;
                 if (_configurationSource.OnLoadException != null)
                 {
-                    var exceptionContext = new AWSSystemManagerExceptionContext
+                    var exceptionContext = new AWSSystemsManagerExceptionContext
                     {
                         Provider = this,
                         Exception = ex

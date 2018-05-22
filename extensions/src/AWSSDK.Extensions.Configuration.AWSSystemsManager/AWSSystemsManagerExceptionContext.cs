@@ -18,13 +18,13 @@ using System;
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.Configuration
 {
-    /// <summary>Contains information about an AWSSystemManager load exception.</summary>
-    public class AWSSystemManagerExceptionContext
+    /// <summary>Contains information about an AWSSystemsManager load exception.</summary>
+    public class AWSSystemsManagerExceptionContext
     {
         /// <summary>
-        /// The <see cref="T:Microsoft.Extensions.Configuration.AWSSystemManagerConfigurationProvider" /> that caused the exception.
+        /// The <see cref="T:Microsoft.Extensions.Configuration.AWSSystemsManagerConfigurationProvider" /> that caused the exception.
         /// </summary>
-        public AWSSystemManagerConfigurationProvider Provider { get; set; }
+        public AWSSystemsManagerConfigurationProvider Provider { get; set; }
 
         /// <summary>The exception that occured in Load.</summary>
         public Exception Exception { get; set; }

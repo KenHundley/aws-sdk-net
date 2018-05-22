@@ -1,4 +1,4 @@
-﻿namespace AWSSystemManagerTestProject
+﻿namespace AWSSystemsManagerTestProject
 {
     public class ApplicationSettings
     {

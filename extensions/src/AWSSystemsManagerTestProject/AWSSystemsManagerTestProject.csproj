@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AWSSDK.Extensions.Configuration.AWSSystemManager\AWSSDK.Extensions.Configuration.AWSSystemManager.csproj" />
+    <ProjectReference Include="..\AWSSDK.Extensions.Configuration.AWSSystemsManager\AWSSDK.Extensions.Configuration.AWSSystemsManager.csproj" />
   </ItemGroup>
 
 </Project>

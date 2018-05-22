@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "AWSSystemManagerTestProject": {
+    "AWSSystemsManagerTestProject": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

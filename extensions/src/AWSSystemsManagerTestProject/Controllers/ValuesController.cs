@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace AWSSystemManagerTestProject.Controllers
+namespace AWSSystemsManagerTestProject.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller

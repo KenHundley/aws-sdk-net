@@ -14,7 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\AWSSDK.Extensions.Configuration.AWSSystemManager\AWSSDK.Extensions.Configuration.AWSSystemManager.csproj" />
+    <ProjectReference Include="..\..\..\src\AWSSDK.Extensions.Configuration.AWSSystemsManager\AWSSDK.Extensions.Configuration.AWSSystemsManager.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestFiles\" />
   </ItemGroup>
 
 </Project>

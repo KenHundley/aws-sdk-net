@@ -20,24 +20,24 @@ using Amazon.Extensions.NETCore.Setup;
 namespace Microsoft.Extensions.Configuration
 {
     /// <summary>
-    /// Extension methods for registering <see cref="AWSSystemManagerConfigurationProvider"/> with <see cref="IConfigurationBuilder"/>.
+    /// Extension methods for registering <see cref="AWSSystemsManagerConfigurationProvider"/> with <see cref="IConfigurationBuilder"/>.
     /// </summary>
-    public static class AWSSystemManagerExtensions
+    public static class AWSSystemsManagerExtensions
     {
         /// <summary>
-        /// Adds an <see cref="IConfigurationProvider"/> that reads configuration values from AWS System Manager Parameter Store with a specified path.
+        /// Adds an <see cref="IConfigurationProvider"/> that reads configuration values from AWS Systems Manager Parameter Store with a specified path.
         /// </summary>
         /// <param name="builder">The <see cref="IConfigurationBuilder"/> to add to.</param>
-        /// <param name="awsOptions"><see cref="AWSOptions"/> used to create an AWS System Manager Client connection</param>
+        /// <param name="awsOptions"><see cref="AWSOptions"/> used to create an AWS Systems Manager Client connection</param>
         /// <param name="path">The path that variable names must start with. The path will be removed from the variable names.</param>
         /// <param name="reloadAfter">Initiate reload after TimeSpan</param>
         /// <param name="onLoadException">Delegate to call on Exception</param>
         /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
-        public static IConfigurationBuilder AddAWSSystemManager(this IConfigurationBuilder builder, AWSOptions awsOptions, string path, TimeSpan? reloadAfter = null, Action<AWSSystemManagerExceptionContext> onLoadException = null)
+        public static IConfigurationBuilder AddAWSSystemsManager(this IConfigurationBuilder builder, AWSOptions awsOptions, string path, TimeSpan? reloadAfter = null, Action<AWSSystemsManagerExceptionContext> onLoadException = null)
         {
             if (awsOptions == null) throw new ArgumentNullException(nameof(awsOptions));
             if (string.IsNullOrWhiteSpace(path)) throw new ArgumentNullException(nameof(path));
-            return builder.AddAWSSystemManager(source =>
+            return builder.AddAWSSystemsManager(source =>
             {
                 source.AwsOptions = awsOptions;
                 source.Path = path;
@@ -47,18 +47,18 @@ namespace Microsoft.Extensions.Configuration
         }
 
         /// <summary>
-        /// Adds an <see cref="IConfigurationProvider"/> that reads configuration values from AWS System Manager Parameter variables with a specified path.
+        /// Adds an <see cref="IConfigurationProvider"/> that reads configuration values from AWS Systems Manager Parameter variables with a specified path.
         /// </summary>
         /// <param name="builder">The <see cref="IConfigurationBuilder"/> to add to.</param>
         /// <param name="path">The path that variable names must start with. The path will be removed from the variable names.</param>
         /// <param name="reloadAfter">Initiate reload after TimeSpan</param>
         /// <param name="onLoadException">Delegate to call on Exception</param>
         /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
-        public static IConfigurationBuilder AddAWSSystemManager(this IConfigurationBuilder builder, string path, TimeSpan? reloadAfter = null, Action<AWSSystemManagerExceptionContext> onLoadException = null)
+        public static IConfigurationBuilder AddAWSSystemsManager(this IConfigurationBuilder builder, string path, TimeSpan? reloadAfter = null, Action<AWSSystemsManagerExceptionContext> onLoadException = null)
         {
             if (string.IsNullOrWhiteSpace(path)) throw new ArgumentNullException(nameof(path));
             var config = builder.Build();
-            return builder.AddAWSSystemManager(config.GetAWSOptions(), path, reloadAfter, onLoadException);
+            return builder.AddAWSSystemsManager(config.GetAWSOptions(), path, reloadAfter, onLoadException);
         }
 
         /// <summary>
@@ -67,9 +67,9 @@ namespace Microsoft.Extensions.Configuration
         /// <param name="builder">The <see cref="IConfigurationBuilder"/> to add to.</param>
         /// <param name="configureSource">Configures the source.</param>
         /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
-        public static IConfigurationBuilder AddAWSSystemManager(this IConfigurationBuilder builder, Action<AWSSystemManagerConfigurationSource> configureSource)
+        public static IConfigurationBuilder AddAWSSystemsManager(this IConfigurationBuilder builder, Action<AWSSystemsManagerConfigurationSource> configureSource)
         {
-            var configurationSource = new AWSSystemManagerConfigurationSource();
+            var configurationSource = new AWSSystemsManagerConfigurationSource();
             configureSource(configurationSource);
             if (configurationSource.AwsOptions != null) return builder.Add(configurationSource);
             
