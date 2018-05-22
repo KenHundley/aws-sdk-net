@@ -71,6 +71,7 @@ namespace Microsoft.Extensions.Configuration
         {
             var configurationSource = new AWSSystemsManagerConfigurationSource();
             configureSource(configurationSource);
+            if (string.IsNullOrWhiteSpace(configurationSource.Path)) throw new ArgumentNullException(nameof(configurationSource.Path));
             if (configurationSource.AwsOptions != null) return builder.Add(configurationSource);
             
             var config = builder.Build();

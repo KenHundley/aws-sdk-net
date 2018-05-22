@@ -10,4 +10,10 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\..\..\..\..\Users\khundley\.nuget\packages\castle.core\4.0.0\lib\netstandard1.3\Castle.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
